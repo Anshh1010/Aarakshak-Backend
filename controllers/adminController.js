@@ -419,7 +419,7 @@ exports.assignUsersToSession = async (req, res) => {
                 const newSessionEndTime = session.endTime;
 
                 return (
-                    userSession.session !== sessionId && // Exclude the current session
+                    userSession.session !== sessionId && 
                     ((newSessionStartTime >= userSessionStartTime && newSessionStartTime < userSessionEndTime) ||
                     (newSessionEndTime > userSessionStartTime && newSessionEndTime <= userSessionEndTime) ||
                     (newSessionStartTime <= userSessionStartTime && newSessionEndTime >= userSessionEndTime))
